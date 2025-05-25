@@ -17,11 +17,7 @@ The system consists of the following components:
 
 3. **Tools**:
    - **Calculator**: Basic and advanced mathematical calculations
-   - **Equation Solver**: Solves algebraic equations using sympy
    - **Constant Lookup**: Provides physical constants and their descriptions
-   - **Unit Converter**: Converts between different units of measurement
-   - **Periodic Table**: Element information and properties
-   - **Stoichiometry Calculator**: Chemical calculations and equation balancing
 
 ### Technical Stack
 
@@ -63,6 +59,7 @@ The system consists of the following components:
 ## Deployment
 
 The application is deployed on Vercel. The deployment process is automated through GitHub integration.
+[link](link)
 
 ## API Endpoints
 
@@ -78,20 +75,10 @@ The application is deployed on Vercel. The deployment process is automated throu
 - Modern, responsive web interface
 - Error handling and graceful degradation
 
-## Future Improvements
-
-- Add conversation history
-- Implement more sophisticated equation balancing
-- Add support for more subjects
-- Enhance error handling and user feedback
-- Add user authentication and personalized learning paths
 
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 
