@@ -4,14 +4,8 @@ import os
 from datetime import datetime
 from logging.handlers import RotatingFileHandler
 
-LOG_DIR = "logs"
-if not os.path.exists(LOG_DIR):
-    os.makedirs(LOG_DIR)
-
-# Configure log rotation
-log_file = os.path.join(LOG_DIR, "ai_tutor.log")
-MAX_BYTES = 10 * 1024 * 1024  # 10MB per file
-BACKUP_COUNT = 5  # Keep 5 backup files
+# Determine if we're in production (Vercel) or development
+IS_PRODUCTION = os.getenv('ENVIRONMENT') == 'production'
 
 logger = logging.getLogger("ai_tutor")
 logger.setLevel(logging.INFO)
@@ -28,18 +22,28 @@ console_handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(level
 if hasattr(console_handler.stream, 'reconfigure'):
     console_handler.stream.reconfigure(encoding='utf-8')
 
-# File handler with rotation
-file_handler = RotatingFileHandler(
-    log_file,
-    maxBytes=MAX_BYTES,
-    backupCount=BACKUP_COUNT,
-    encoding='utf-8'
-)
-file_handler.setLevel(logging.INFO)
-file_handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
-
 logger.addHandler(console_handler)
-logger.addHandler(file_handler)
+
+# Only add file handler in development environment
+if not IS_PRODUCTION:
+    LOG_DIR = "logs"
+    if not os.path.exists(LOG_DIR):
+        os.makedirs(LOG_DIR)
+    
+    # Configure log rotation
+    log_file = os.path.join(LOG_DIR, "ai_tutor.log")
+    MAX_BYTES = 10 * 1024 * 1024  # 10MB per file
+    BACKUP_COUNT = 5  # Keep 5 backup files
+    
+    file_handler = RotatingFileHandler(
+        log_file,
+        maxBytes=MAX_BYTES,
+        backupCount=BACKUP_COUNT,
+        encoding='utf-8'
+    )
+    file_handler.setLevel(logging.INFO)
+    file_handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+    logger.addHandler(file_handler)
 
 def log_tool_usage(tool_name: str, input_data: dict, result: any, success: bool):
     """Log tool usage for debugging and monitoring"""
