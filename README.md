@@ -42,22 +42,16 @@ Our system implements a sophisticated multi-agent architecture inspired by moder
 ### Agent Capabilities
 
 - **Contextual Understanding**
-  - Maintains conversation history
   - Recognizes user's learning level
   - Adapts explanations accordingly
-  - Provides progressive learning paths
 
 - **Tool Integration**
   - **Calculator**: Advanced mathematical computations
   - **Constant Lookup**: Scientific constants and properties
-  - **Equation Solver**: Step-by-step problem solving
-  - **Unit Converter**: Comprehensive unit conversions
 
 - **Learning Enhancement**
   - Interactive problem-solving
-  - Conceptual verification
   - Error analysis and correction
-  - Progressive difficulty scaling
 
 ## Technical Implementation
 
