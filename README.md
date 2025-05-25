@@ -1,84 +1,140 @@
 # Multi-Agent AI Tutor
 
-A sophisticated AI tutoring system that uses multiple specialized agents to provide comprehensive assistance in mathematics, physics, and chemistry. The system leverages the Gemini API for natural language understanding and includes various tools for calculations and problem-solving.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Available-green)](https://multi-agent-ai-tutor.vercel.app/)
+[![Deployment](https://img.shields.io/badge/Deployed%20on-Vercel-blue)](https://multi-agent-ai-tutor.vercel.app/)
 
-## Architecture
+A sophisticated AI tutoring system that implements advanced agent-based architecture for intelligent subject-specific tutoring. The system leverages Google's Gemini API and incorporates principles from Google's Agent Development Kit (ADK) to create a highly capable, context-aware tutoring experience.
 
-The system consists of the following components:
+## Live Demo
+Visit the live application at: [https://multi-agent-ai-tutor.vercel.app/](https://multi-agent-ai-tutor.vercel.app/)
 
-### Main Components
+## Intelligent Agent Architecture
 
-1. **Tutor Agent**: The main orchestrator that receives user queries, identifies the subject, and delegates to appropriate sub-agents.
+Our system implements a sophisticated multi-agent architecture inspired by modern AI agent frameworks, featuring:
 
-2. **Subject-Specific Agents**:
-   - **Math Agent**: Handles mathematical queries using calculator and equation solver tools
-   - **Physics Agent**: Manages physics questions with constant lookup and unit converter tools
-   - **Chemistry Agent**: Processes chemistry queries with periodic table and stoichiometry tools
+### Core Agent System
 
-3. **Tools**:
-   - **Calculator**: Basic and advanced mathematical calculations
-   - **Constant Lookup**: Provides physical constants and their descriptions
+1. **Tutor Agent (Orchestrator)**
+   - Implements advanced query classification and routing
+   - Maintains conversation context and learning progression
+   - Employs sophisticated prompt engineering for optimal responses
+   - Uses reflection and self-improvement mechanisms
 
-### Technical Stack
+2. **Specialized Subject Agents**
+   - **Math Agent**
+     - Domain-specific knowledge representation
+     - Advanced problem decomposition
+     - Step-by-step solution generation
+     - Mathematical reasoning validation
+   
+   - **Physics Agent**
+     - Conceptual understanding verification
+     - Physical law application
+     - Unit conversion and dimensional analysis
+     - Real-world application mapping
+   
+   - **Chemistry Agent**
+     - Chemical reaction analysis
+     - Molecular structure understanding
+     - Stoichiometric calculations
+     - Periodic trends application
 
-- **Backend**: FastAPI
-- **Frontend**: HTML, TailwindCSS
-- **AI**: Google Gemini API
-- **Deployment**: Vercel
+### Agent Capabilities
 
-## Setup Instructions
+- **Contextual Understanding**
+  - Maintains conversation history
+  - Recognizes user's learning level
+  - Adapts explanations accordingly
+  - Provides progressive learning paths
 
-1. Clone the repository:
+- **Tool Integration**
+  - **Calculator**: Advanced mathematical computations
+  - **Constant Lookup**: Scientific constants and properties
+  - **Equation Solver**: Step-by-step problem solving
+  - **Unit Converter**: Comprehensive unit conversions
+
+- **Learning Enhancement**
+  - Interactive problem-solving
+  - Conceptual verification
+  - Error analysis and correction
+  - Progressive difficulty scaling
+
+## Technical Implementation
+
+### Modern Tech Stack
+- **Backend**: FastAPI (Async-first, high-performance)
+- **Frontend**: HTML, TailwindCSS (Responsive, modern UI)
+- **AI Engine**: Google Gemini API (State-of-the-art LLM)
+- **Deployment**: Vercel (Serverless, edge-optimized)
+
+### System Features
+- Real-time query processing
+- Asynchronous operation handling
+- Robust error management
+- Comprehensive logging and monitoring
+- Scalable serverless architecture
+
+## Setup and Development
+
+1. **Environment Setup**
    ```bash
    git clone <repository-url>
    cd ai-tutor
-   ```
-
-2. Create a virtual environment and activate it:
-   ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. Install dependencies:
-   ```bash
    pip install -r requirements.txt
    ```
 
-4. Create a `.env` file in the root directory with your Gemini API key:
+2. **Configuration**
+   Create `.env`:
    ```
    GEMINI_API_KEY=your_api_key_here
    DEBUG=False
+   ENVIRONMENT=development
    ```
 
-5. Run the development server:
+3. **Local Development**
    ```bash
    uvicorn app.main:app --reload
    ```
 
-## Deployment
+## API Architecture
 
-The application is deployed on Vercel. The deployment process is automated through GitHub integration.
-[link](link)
+- `GET /`: Interactive web interface
+- `POST /api/query`: Intelligent query processing
+- `GET /api/health`: System health monitoring
+- `GET /api/metrics`: Performance metrics
 
-## API Endpoints
+## Advanced Features
 
-- `GET /`: Web interface
-- `POST /api/query`: Process user queries
-- `GET /api/health`: Health check endpoint
+- **Intelligent Routing**
+  - Context-aware query classification
+  - Dynamic agent selection
+  - Multi-agent collaboration when needed
 
-## Features
+- **Learning Optimization**
+  - Adaptive difficulty levels
+  - Personalized learning paths
+  - Concept reinforcement
+  - Progress tracking
 
-- Natural language processing for query understanding
-- Subject-specific agents with specialized tools
-- Real-time calculations and problem-solving
-- Modern, responsive web interface
-- Error handling and graceful degradation
-
+- **System Reliability**
+  - Graceful error handling
+  - Fallback mechanisms
+  - Performance monitoring
+  - Automated recovery
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+We welcome contributions! The system is designed to be extensible, allowing for:
+- New subject agent integration
+- Additional tool development
+- UI/UX improvements
+- Performance optimizations
+
+## License
+
+This project is open-source and available under the MIT License.
 
 
 
