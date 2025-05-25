@@ -13,3 +13,4 @@ aiofiles>=0.8.0
 python-json-logger>=2.0.0
 prometheus-client>=0.12.0  # For metrics
 sentry-sdk>=1.5.0  # For error tracking
+numpy>=1.24.0  # For calculator tool
